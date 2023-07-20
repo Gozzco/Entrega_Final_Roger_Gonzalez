@@ -1,0 +1,80 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+*{
+  background-color: rgb(247, 237, 222);
+}
+
+
+
+.nav {
+  background-color: #333;
+  color: #000000;
+  display:grid;
+  grid-template-columns: 0.5fr 2fr 1.5fr 4fr 1fr 1fr 1fr;
+  row-gap: 3%;
+}
+
+.logo{
+  background-color: #333;
+  scale: 50%;
+  display: grid;
+  grid-column: 2 / 3;
+}
+
+ul {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+  margin: 15px;
+  grid-column: 4 / 5;
+}
+
+li {
+  background-color: #333;
+  color: rgb(250, 165, 9);
+  padding: 1rem;
+}
+
+li:hover {
+  scale: 110%;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+.contCarrito{
+  background-color: #333;
+  grid-column: 6 / 7;
+  display: flex;
+  align-items: center;
+}
+
+.carrito {
+  text-align: center;
+  background-color: #333;
+  font-size: 25px;
+}
+
+.carritoWidget {
+  background-color: #333;
+  text-align: center;
+  color: rgb(250, 165, 9);
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.saludo{
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
