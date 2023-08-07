@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
