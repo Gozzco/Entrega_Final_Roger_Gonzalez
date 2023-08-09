@@ -1,11 +1,10 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react' 
 import ItemDetail from './ItemDetail'
 
 
 const ItemDetailContainer = () => {
 
-  const productos = [
+  const products= [
 
     {id:1, name:"Silla Falcon", category:"Madera", price:12000, stock:1, description:"Silla de madera", src:"/assets/needoarticulosilla1.jpg"},
     {id:3, name:"Silla Barinas", category:"Metal", price:13600, stock:1, description:"Silla de metal", src:"/assets/needoarticulosilla3.jpg"},
@@ -25,20 +24,33 @@ const ItemDetailContainer = () => {
 
   ]
 
-
-}
-
-const getProductos = new Promise ((resolve, reject) => {
+const getProducts = new Promise ((resolve, reject) => {
   
   if (productos.lenght > 0){
     setTimeout(() => {
-
-      resolve(productos)
+       resolve(productos)
     },2500)
   }else{
     reject (new Error ("No hay productos para mostrar"))
 
   }
 })
+
+getProducts
+    .then((result) => {
+    })
+    .cath((error)=>{
+      console.log(error)
+    })
+
+    return (
+
+      <>
+        <ItemDetail products={products}/>
+      </>
+
+    )
+
+}
 
 export default ItemDetailContainer

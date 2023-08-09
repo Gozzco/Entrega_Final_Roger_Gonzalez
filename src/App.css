@@ -78,3 +78,9 @@ a {
   justify-content: center;
   margin-top: 50px;
 }
+
+.itemcard{
+  display: flex;
+  justify-content: space-between;
+  border:#000000;
+}
