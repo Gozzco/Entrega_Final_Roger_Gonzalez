@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
 import { CardFooter, CardHeader, Heading, Text, Center, CardBody } from '@chakra-ui/react';
 
-const ItemDetail = ({initialProducts}) => {
+const ItemDetail = ({products}) => {
 
-    console.log(initialProducts)
+    console.log(products)
 
     return(
 
@@ -14,7 +14,7 @@ const ItemDetail = ({initialProducts}) => {
         <h1>Item Detail</h1>
         {
 
-          initialProducts.map((product)=> (
+          products.map((product)=> (
 
             <div key={product.id}>
 

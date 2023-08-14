@@ -1,12 +1,12 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Cart from './components/Cart';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
 
 
 
@@ -25,12 +25,10 @@ const App = () => {
         <Route exact path='/contact' element={<Contact />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/cart' element={<Cart/>}/>
-        <Route exact path='/category/all' element={<ItemListContainer />} />
+        <Route exact path='/category/:category' element={<ItemListContainer />} />
         <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
 
       </Routes>
-
-      <ItemListContainer/>
 
     </BrowserRouter>
 

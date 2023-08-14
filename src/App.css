@@ -7,8 +7,6 @@
   background-color: rgb(247, 237, 222);
 }
 
-
-
 .nav {
   background-color: #333;
   color: #000000;
@@ -79,8 +77,36 @@ a {
   margin-top: 50px;
 }
 
-.itemcard{
+.cardList{
+  margin-top: 100px;
   display: flex;
-  justify-content: space-between;
-  border:#000000;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card{
+  margin: 30px;
+  background-color: #fff;
+}
+
+.textPrice{
+  font-size: x-large;
+  color: #333;
+  font-weight:bolder;
+}
+
+.contBuyButton{
+  justify-content: center;
+}
+
+.imageCard{
+  max-height: 450px;
+}
+
+.menuList{
+  font-size: medium;
+}
+
+.menu{
+  background-color:#333;
 }
