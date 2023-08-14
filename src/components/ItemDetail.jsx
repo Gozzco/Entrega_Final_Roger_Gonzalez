@@ -3,9 +3,39 @@ import { useParams, Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
 import { CardFooter, CardHeader, Heading, Text, Center, CardBody } from '@chakra-ui/react';
 
-const ItemDetail = ({products}) => {
+const ItemDetail = ({initialProducts}) => {
 
-  const { id } = useParams ();
+    console.log(initialProducts)
+
+    return(
+
+      <div>
+
+        <h1>Item Detail</h1>
+        {
+
+          initialProducts.map((product)=> (
+
+            <div key={product.id}>
+
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <p>{product.stock}</p>
+
+            </div>
+
+          ))
+
+        }
+
+      </div>
+
+    )
+
+
+
+
+  /*const { id } = useParams ();
 
   const filteredProducts = products.filter((prod) => prod.id === id)
 
@@ -43,7 +73,7 @@ const ItemDetail = ({products}) => {
         
       }
     </div>
-  )
+  )*/
 }
 
 export default ItemDetail

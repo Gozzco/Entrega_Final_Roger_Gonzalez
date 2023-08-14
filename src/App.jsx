@@ -22,16 +22,15 @@ const App = () => {
       <Routes>
 
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/about' element={<About />} />
         <Route exact path='/contact' element={<Contact />} />
+        <Route exact path='/about' element={<About />} />
         <Route exact path='/cart' element={<Cart/>}/>
-        <Route exact path='/category/:category' element={<ItemListContainer/>} />
+        <Route exact path='/category/all' element={<ItemListContainer />} />
         <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
-
 
       </Routes>
 
-      
+      <ItemListContainer/>
 
     </BrowserRouter>
 

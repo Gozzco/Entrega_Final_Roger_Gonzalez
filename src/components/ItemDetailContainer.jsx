@@ -1,10 +1,10 @@
-import React from 'react' 
+import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail'
 
 
 const ItemDetailContainer = () => {
 
-  const products= [
+  const initialProducts= [
 
     {id:1, name:"Silla Falcon", category:"Madera", price:12000, stock:1, description:"Silla de madera", src:"/assets/needoarticulosilla1.jpg"},
     {id:3, name:"Silla Barinas", category:"Metal", price:13600, stock:1, description:"Silla de metal", src:"/assets/needoarticulosilla3.jpg"},
@@ -22,13 +22,41 @@ const ItemDetailContainer = () => {
     {id:15, name:"Silla Monagas", category:"Textiles", price:26500, stock:1, description:"Silla de tela", src:"/assets/needoarticulosilla15.jpg"},
     {id:2, name:"Silla Zulia", category:"Madera", price:11300, stock:1, description:"Silla de madera", src:"/assets/needoarticulosilla2.jpg"},
 
-  ]
+  ];
+
+
+ /*const [products, setProducts] = useState(initialProducts);
+
+ const { id } = params;
+
+  useEffect(() => {
+    const getProducts = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(initialProducts);
+      }, 2500);
+    });
+
+    getProducts
+      .then((result) => {
+        setProducts(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <>
+      <ItemDetail products={products} />
+    </>
+  );
+};*/
 
 const getProducts = new Promise ((resolve, reject) => {
   
-  if (productos.lenght > 0){
+  if (InitialProducts.lenght > 0){
     setTimeout(() => {
-       resolve(productos)
+       resolve(initialProducts)
     },2500)
   }else{
     reject (new Error ("No hay productos para mostrar"))
@@ -37,9 +65,10 @@ const getProducts = new Promise ((resolve, reject) => {
 })
 
 getProducts
-    .then((result) => {
+    .then((res) => {
+      console.logs(res)
     })
-    .cath((error)=>{
+    .catch((error)=>{
       console.log(error)
     })
 

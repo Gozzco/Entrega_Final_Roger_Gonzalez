@@ -50,21 +50,20 @@ const ItemListContainer = () => {
 
     getProducts
       .then((res) => {
+        
       })
       .catch ((error) => {
         console.log(error)
     })
 
-  const filteredProducts = products.filter ((prod) => prod.category === category)
+  const filteredProducts = products.filter ((product) => product.category === category)
 
   return (
-
-    <Center p='1rem'>
+    <Center>
 
       <ItemList products = {filteredProducts}/>
-
+      
     </Center>
-
   )
 
 }
