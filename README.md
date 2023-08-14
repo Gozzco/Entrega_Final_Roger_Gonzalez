@@ -11,7 +11,7 @@
 ## Tienda de articulos para el hogar enfocado en el diseño y con una estetica contemporanea. Este proyecto se sigue trabajando
 
 
-![NeedoGif2](https://github.com/Gozzco/preEntrega2_Roger_Gonzalez/assets/118758175/aab795b8-fbb3-401a-8e67-9414b1905bef)
+![GIFNeedo2](https://github.com/Gozzco/preEntrega2_Roger_Gonzalez/assets/118758175/5c9322d0-3a3b-40eb-9d8e-8a88fa404152)
 
 
 
