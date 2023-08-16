@@ -57,8 +57,13 @@ const ItemListContainer = () => {
     })
 
 
-    const filteredProducts = products.filter ((product) => product.category === category)
-  
+    let filteredProducts = products;
+    
+    if (category && category !== 'all') {
+
+      filteredProducts = products.filter(product => product.category === category);
+      
+    }  
 
     return (
       <Center>

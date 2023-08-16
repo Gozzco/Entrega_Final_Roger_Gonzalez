@@ -12,20 +12,20 @@ const NavBar = () => {
 
     <div className='nav'>
 
-        <img className='logo' src="/public/needologoposi.png" alt="logo de Needo" />
+            <Link className='logo' to={'/'}><img className='logoImg' src="/public/needologoposi.png" alt="logo de Needo" /></Link>
 
         <ul>
             <li><Link to={'/'}>Home</Link></li>
-            <li className='menu'><Menu>
-                  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                    Productos
-                  </MenuButton>
+            <li><Menu className='menuList'>
+                  <MenuButton bg='rgb(250, 165, 9)' fontSize='sm' color='gray.700' borderRadius='0' padding='1.5' as={Button} rightIcon={<ChevronDownIcon bg='rgb(250, 165, 9)'/>}>
+                    <p className='menuList'>Productos</p>
+                  </MenuButton >
 
-                  <MenuList className='menuList'>
-                    <MenuItem><Link to={'/category/madera'}>Sillas de madera</Link></MenuItem>
-                    <MenuItem><Link to={'/category/textiles'}>Sillas de tela</Link></MenuItem>
-                    <MenuItem><Link to={'/category/metal'}>Sillas de metal</Link></MenuItem>
-                    <MenuItem><Link to={'/tipo/silla'}>Ver todo</Link></MenuItem>
+                  <MenuList  bg='rgb(250, 165, 9)' fontSize='sm' borderRadius='0' color='gray.700'>
+                    <MenuItem bg='rgb(250, 165, 9)'><Link to={'/category/madera'}><p className='menuList'>Sillas de madera</p></Link></MenuItem>
+                    <MenuItem bg='rgb(250, 165, 9)'><Link to={'/category/textiles'}><p className='menuList'>Sillas de tela</p></Link></MenuItem>
+                    <MenuItem bg='rgb(250, 165, 9)'><Link to={'/category/metal'}><p className='menuList'>Sillas de metal</p></Link></MenuItem>
+                    <MenuItem bg='rgb(250, 165, 9)'><Link to={'/category/all'}><p className='menuList'>Ver todo</p></Link></MenuItem>
                   </MenuList>
               </Menu>
             </li>
