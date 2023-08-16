@@ -108,6 +108,24 @@ li:hover {
   font-family: "Raleway", sans-serif;
 }
 
+.footer{
+  height: 100px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerIcons{
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large;
+}
+
+.fa-brands{
+  background-color: #333;
+  color: rgb(250, 165, 9);
+}
+
 
 
 

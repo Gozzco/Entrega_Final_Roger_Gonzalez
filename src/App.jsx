@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
+import Footer from './components/Footer';
 
 
 
@@ -30,7 +31,7 @@ const App = () => {
 
       </Routes>
 
-      
+      <Footer/>      
 
     </BrowserRouter>
 
