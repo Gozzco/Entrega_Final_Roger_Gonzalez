@@ -1,5 +1,4 @@
 import React from 'react'
-import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import {ChevronDownIcon} from '@chakra-ui/icons'
 import CartWidget from './CartWidget'
@@ -18,7 +17,7 @@ const NavBar = () => {
             <li><Link to={'/'}>Home</Link></li>
             <li><Menu className='menuList'>
                   <MenuButton bg='rgb(250, 165, 9)' fontSize='sm' color='gray.700' borderRadius='0' padding='1.5' as={Button} rightIcon={<ChevronDownIcon bg='rgb(250, 165, 9)'/>}>
-                    <p className='menuList'>Productos</p>
+                    <p className='menuListName'>Productos</p>
                   </MenuButton >
 
                   <MenuList  bg='rgb(250, 165, 9)' fontSize='sm' borderRadius='0' color='gray.700'>
@@ -29,7 +28,7 @@ const NavBar = () => {
                   </MenuList>
               </Menu>
             </li>
-            <li><Link to={'/contact'}>Contacto</Link></li>
+            <li><Link to={'/contact'}>Log In</Link></li>
             <li><Link to={'/about'}>Conocenos</Link></li>
         </ul>
 

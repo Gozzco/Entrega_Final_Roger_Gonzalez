@@ -1,79 +1,42 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
-import ItemCount from './ItemCount'
-import { CardFooter, CardHeader, Heading, Text, Center, CardBody } from '@chakra-ui/react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import ItemCount from './ItemCount';
+import { Card, CardBody, CardFooter, Stack, Heading, Divider, Image, Text, Center } from '@chakra-ui/react';
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
-const ItemDetail = ({products}) => {
+const ItemDetail = ({ products }) => {
+  const { id } = useParams();
+  const { addToCart } = useShoppingCart ();
 
-    console.log(products)
+  const product = products.find((product) => product.id === parseInt(id));
 
-    return(
-
-      <div>
-
-        <h1>Item Detail</h1>
-        {
-
-          products.map((product)=> (
-
-            <div key={product.id}>
-
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <p>{product.stock}</p>
-
-            </div>
-
-          ))
-
-        }
-
-      </div>
-
-    )
-
-
-
-
-  /*const { id } = useParams ();
-
-  const filteredProducts = products.filter((prod) => prod.id === id)
+  if (!product) {
+    return <div>Producto no encontrado.</div>;
+  }
 
   return (
+    <Center>
+      <Card className='cardDetail' maxW='lg'>
+      <CardBody borderRadius='0' bg='white'>
 
-    <div>
-      {filteredProducts.map((p) => {
+        <Image className='ImageCardDetail' src = {product.src} alt= {product.name} borderRadius='18px' />
 
-        return (
-          <div key={p.id}>
-            <Center>
+        <Stack bg='white' mt='4' spacing='2'>
+          <Heading bg='white' fontFamily='"Raleway", sans-serif' fontSize='50px' fontWeight='bolder' marginTop='40px'>{product.name}</Heading>
+          <Text bg='white' marginTop='20px'>{product.description}</Text>
+          <Text bg='white' marginTop='10px' className='textPrice'>${product.price}</Text>
+        </Stack>
 
-              <Card>
+      </CardBody>
 
-                <CardHeader>
-                    <Heading>{p.name}</Heading>
-                </CardHeader>
-                <CardBody>
-                    <Text>{p.description}</Text>
-                    <Text>{p.category}</Text>
-                </CardBody>
-                <CardFooter>
-                    <ItemCount />
-                </CardFooter>
+        <Divider />
+        <CardFooter bg='#333' className='cardFooter'>
+          <ItemCount initial={0} stock={product.stock} productObject={product}/>
+        </CardFooter>
+      </Card>
+    </Center>
+  );
+};
 
-              </Card>
-              
-            </Center>
+export default ItemDetail;
 
-          </div>
-
-        )
-
-      })
-        
-      }
-    </div>
-  )*/
-}
-
-export default ItemDetail

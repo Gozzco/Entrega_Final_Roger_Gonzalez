@@ -8,8 +8,7 @@ import Home from './components/Home';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
-
-
+import { CartContextProvider } from './context/ShoppingCartContext';
 
 
 const App = () => {
@@ -17,6 +16,9 @@ const App = () => {
   return (
 
     <BrowserRouter>
+
+
+      <CartContextProvider>
 
       <NavBar/>
 
@@ -31,7 +33,9 @@ const App = () => {
 
       </Routes>
 
-      <Footer/>      
+      <Footer/>   
+
+      </CartContextProvider>
 
     </BrowserRouter>
 

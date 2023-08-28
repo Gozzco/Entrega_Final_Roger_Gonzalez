@@ -13,9 +13,9 @@ const Footer = () => {
     </ul>
 
     <ul className='footerIcons'>
-        <li><Link to={'/'}> <i class="fa-brands fa-instagram"></i> </Link></li>
-        <li><Link to={'/'}><i class="fa-brands fa-facebook"></i></Link></li>
-        <li><Link to={'/'}><i class="fa-brands fa-twitter"></i></Link></li>
+        <li><Link to={'/'}> <i className="fa-brands fa-instagram"></i> </Link></li>
+        <li><Link to={'/'}><i className="fa-brands fa-facebook"></i></Link></li>
+        <li><Link to={'/'}><i className="fa-brands fa-twitter"></i></Link></li>
     </ul>
 
 </div>

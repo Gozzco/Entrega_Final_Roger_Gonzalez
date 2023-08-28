@@ -79,21 +79,55 @@ li:hover {
 
 .card{
   margin: 30px;
+  justify-content: center;
+}
+
+.cardDetail{
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 .textPrice{
-  font-size: x-large;
+  font-size: xx-large;
   color: #333;
   font-weight:bolder;
   font-family: "Raleway", sans-serif;
 }
 
+.cardFooter{
+  justify-content: center;
+}
+
 .contBuyButton{
   justify-content: center;
+  color: #333;
+}
+
+.contBuyButton:hover{
+  scale: 105%;
+  transition: all 0.3s ease;
+}
+
+.cardBody{
+  width: 900px;
+}
+
+.imageCardStack{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 .imageCard{
   max-height: 450px;
+  margin-left: 25px;
+}
+
+.imageCardDetail{
+  max-height: 300px;
+  justify-content: center;
 }
 
 .menuList:hover {
@@ -101,7 +135,7 @@ li:hover {
   background-color: rgb(218, 218, 218);
 }
 
-.menuList {
+.menuList, .menuListName{
   font-size:medium;
   color: #333;
   background-color:rgb(250, 165, 9);
@@ -126,6 +160,91 @@ li:hover {
   color: rgb(250, 165, 9);
 }
 
+.fa-brands:hover {
+  cursor: pointer;
+  scale: 105%;
+}
+
+.addToCart{
+  font-size:large;
+  color: #333;
+  background-color:rgb(250, 165, 9);
+  font-family: "Raleway", sans-serif;
+}
+
+.addToCart:hover{
+  scale: 105%;
+  background-color: rgb(228, 228, 228);
+}
+
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  padding-top: 0px;
+}
+
+.imageWithOverlay {
+  position: relative;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+.imageWithOverlay img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.linkCategory {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 0;
+  margin: 0px;
+  font-size: 50px;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgb(250, 165, 9);
+  font-family: "Raleway", sans-serif;
+}
+
+.titleHome{
+  font-family: "Raleway", sans-serif;
+  color: #333;
+  font-size: 40px;
+  font-weight: bolder;
+  position: relative;
+  bottom: 43%;
+  left: 32%; 
+  padding: 50px;
+}
+
+.linkCart, .fa-sharp{
+  background-color: #333;
+  color: rgb(250, 165, 9);
+  font-size: 30px;
+  font-weight: bolder;
+  padding-top: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.cartWidget{
+  background-color: #ffffff;
+  border-radius: 30px;
+  position: relative;
+  bottom: 30%;
+  left: 40%; 
+  padding: 8px;
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: "Raleway", sans-serif;
+}
+
+.cartContainer{
+  background-color: #333;
+}
 
 
 

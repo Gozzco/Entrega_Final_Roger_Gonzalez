@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Card, CardBody, CardFooter, Stack, Heading, Divider, Button, Image, Text } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter, Stack, Heading, Divider, Button, Image, Text} from '@chakra-ui/react'
 
 
 const item = ({ product }) => {
@@ -8,28 +8,28 @@ const item = ({ product }) => {
 
   return (
 
-      <Card className='card' maxW='sm'>
-    <CardBody borderRadius='0' bg='white'>
+    <Card className='card' maxW='sm'>
+      <CardBody borderRadius='0' bg='white'>
 
-      <Image className='imageCard' src = {product.src} alt= {product.name} borderRadius='18px' />
+        <Image className='imageCard' src = {product.src} alt= {product.name} borderRadius='18px' />
 
-      <Stack bg='white' mt='4' spacing='2'>
-        <Heading bg='white' fontFamily='"Raleway", sans-serif' fontSize='30px' fontWeight='bold'>{product.name}</Heading>
-        <Text bg='white'>{product.description}</Text>
-        <Text bg='white' className='textPrice'>${product.price}</Text>
-      </Stack>
+        <Stack bg='white' mt='4' spacing='2'>
+          <Heading bg='white' fontFamily='"Raleway", sans-serif' fontSize='30px' fontWeight='bold'>{product.name}</Heading>
+          <Text bg='white'>{product.description}</Text>
+          <Text bg='white' className='textPrice'>${product.price}</Text>
+        </Stack>
 
-    </CardBody>
+      </CardBody>
 
-    <Divider />
+      <Divider />
 
-    <CardFooter bg='#333' className='contBuyButton'>
+      <CardFooter bg='#333' className='cardFooter'>
 
-        <Button borderRadius='0' variant='solid' colorScheme='rgb(250, 165, 9);'>
-        <Link to={`/item/${product.id}`}>Ver detalle</Link>
-        </Button>
+          <Button className='contBuyButton' borderRadius='0' variant='solid' colorScheme='rgb(250, 165, 9);'>
+          <Link className='contBuyButton' to={`/item/${product.id}`}>Ver detalle</Link>
+          </Button>
 
-    </CardFooter>
+      </CardFooter>
 
   </Card>
 
