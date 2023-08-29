@@ -15,7 +15,9 @@ const ItemDetail = ({ products }) => {
   }
 
   return (
+
     <Center>
+      
       <Card className='cardDetail' maxW='lg'>
       <CardBody borderRadius='0' bg='white'>
 

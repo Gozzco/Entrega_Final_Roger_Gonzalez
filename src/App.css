@@ -223,15 +223,15 @@ li:hover {
 
 .linkCart, .fa-sharp{
   background-color: #333;
-  color: rgb(250, 165, 9);
+  color: rgb(255, 255, 255);
   font-size: 30px;
   font-weight: bolder;
-  padding-top: 20px;
+  padding-top: 10px;
   font-family: "Raleway", sans-serif;
 }
 
 .cartWidget{
-  background-color: #ffffff;
+  background-color: rgb(250, 165, 9);
   border-radius: 30px;
   position: relative;
   bottom: 30%;
@@ -246,5 +246,49 @@ li:hover {
   background-color: #333;
 }
 
+.loader{
+  margin: 500px;
+}
 
+.cartList{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+.imageCart{
+  width: 60px;
+  height: 90px;
+  margin: 30px;
+}
+
+.cartListData{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  background-color: #ffffff;
+  width: 80%;
+  height: 120px;
+  margin: 10px;
+}
+
+.detailCart{
+  background-color: #ffffff;
+}
+
+.cartRedirect{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+  padding: 50px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+}
 

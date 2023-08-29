@@ -11,20 +11,20 @@ const ItemCount = ({ stock, initial, productObject }) => {
     <ShoppingCartContext.Consumer>
       {({ addToCart }) => (
         <HStack spacing={4}>
-          <Button
+          <Button bg='rgb(250, 165, 9)' borderRadius='0'
             onClick={() => setQuantity(Math.max(quantity - 1, 0))}
             disabled={quantity <= 0}
           >
             -
           </Button>
           <Text>{quantity}</Text>
-          <Button
+          <Button bg='rgb(250, 165, 9)' borderRadius='0'
             onClick={() => setQuantity(Math.min(quantity + 1, stock))}
             disabled={quantity >= stock}
           >
             +
           </Button>
-          <Button
+          <Button bg='rgb(250, 165, 9)' borderRadius='0'
             onClick={() => {
               if (quantity > 0) {
                 addToCart(productObject, quantity);
