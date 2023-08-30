@@ -4,7 +4,7 @@
 
 # **NEEDO - DECOHOME**
 ***
-### Hecho por: Roger González
+## Hecho por: Roger González
 #### Entusiasta de la tecnología, front end developer en proceso
 
 ***
