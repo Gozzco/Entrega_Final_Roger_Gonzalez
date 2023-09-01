@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from '@chakra-ui/react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
       </div>
 
       <div className='imageWithOverlay'>
-        <Link to={'/category/all'}> <p className='linkCategory'>Mira nuestros productos</p> </Link>
+      <Link to={'/category/all'}> <p className='linkCategory'>Mira nuestros productos</p> </Link>
         <img src="public/needobannerprod.jpg" alt=""/>
       </div>
 

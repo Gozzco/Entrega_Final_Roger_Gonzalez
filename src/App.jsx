@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import CheckOut from './components/CheckOut';
 import About from './components/About';
 import Cart from './components/Cart';
 import Contact from './components/Contact';
@@ -8,7 +8,10 @@ import Home from './components/Home';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
+import Confirmation from './components/Confirmation';
 import { CartContextProvider } from './context/ShoppingCartContext';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
 
 
 const App = () => {
@@ -16,7 +19,6 @@ const App = () => {
   return (
 
     <BrowserRouter>
-
 
       <CartContextProvider>
 
@@ -29,7 +31,9 @@ const App = () => {
         <Route exact path='/about' element={<About />} />
         <Route exact path='/cart' element={<Cart/>}/>
         <Route exact path='/category/:category' element={<ItemListContainer />} />
-        <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
+        <Route exact path='/item/:productId' element={<ItemDetailContainer />} />
+        <Route exact path='/checkout' element={<CheckOut />}/>
+        <Route exact path='/confirmation/' element={<Confirmation />}/>
 
       </Routes>
 

@@ -4,8 +4,8 @@ import { ShoppingCartContext } from '../context/ShoppingCartContext';
 
 
 const ItemCount = ({ stock, initial, productObject }) => {
-  const [quantity, setQuantity] = useState(initial);
-  const toast = useToast();
+  const [quantity, setQuantity] = useState(initial)
+  const toast = useToast()
 
   return (
     <ShoppingCartContext.Consumer>
@@ -49,7 +49,7 @@ const ItemCount = ({ stock, initial, productObject }) => {
         </HStack>
       )}
     </ShoppingCartContext.Consumer>
-  );
-};
+  )
+}
 
-export default ItemCount;
+export default ItemCount
