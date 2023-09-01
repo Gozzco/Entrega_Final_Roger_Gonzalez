@@ -7,7 +7,7 @@ const Loader = () => {
 
     <Spinner className='loader'
   thickness='4px'
-  speed='0.65s'
+  speed='0.95s'
   emptyColor='gray.200'
   color='blue.500'
   size='xl'
