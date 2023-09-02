@@ -38,7 +38,7 @@ const App = () => {
       </Routes>
 
       <Footer/>   
-
+      
       </CartContextProvider>
 
     </BrowserRouter>
