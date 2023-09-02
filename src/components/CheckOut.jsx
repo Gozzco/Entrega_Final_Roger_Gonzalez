@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button, FormControl, FormLabel, Input, Box, useToast } from '@chakra-ui/react';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import Confirmation from './Confirmation';
 import { Link } from 'react-router-dom';
 
 
