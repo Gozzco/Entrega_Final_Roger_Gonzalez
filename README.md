@@ -1,4 +1,4 @@
-##### preEntrega2_Roger_Gonzalez
+![Needo - Deco Home - Google Chrome 2023-09-06 03-17-32](https://github.com/Gozzco/Entrega_Final_Roger_Gonzalez/assets/118758175/cbb59a98-58b6-4f64-8b8f-bafd33bf29dd)##### preEntrega2_Roger_Gonzalez
 
 ##### Aplicativo en React - Ecommerce
 
@@ -15,6 +15,6 @@
 
 
 
-![Uploading Needo - Deco Home - Google Chrome 2023-09-06 03-17-32.gif…]()
+![Needo - Deco Home - Google Chrome 2023-09-06 03-17-32](https://github.com/Gozzco/Entrega_Final_Roger_Gonzalez/assets/118758175/8447ae74-3621-4b2b-b8ec-e73996e209a6)
 
 
