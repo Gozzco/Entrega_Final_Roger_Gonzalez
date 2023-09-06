@@ -52,4 +52,4 @@ const ItemCount = ({ stock, initial, productObject }) => {
   )
 }
 
-export default ItemCount
+export default ItemCount;

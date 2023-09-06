@@ -13,33 +13,36 @@ const Cart = () => {
         <div className='cartRedirect'>
           <p> Tu carrito está vacío, echa un vistazo a nuestro catálogo! </p>
           <Button className='contBuyButton' borderRadius='0' variant='solid' colorScheme='rgb(250, 165, 9);'>
-              <Link className='contBuyButton' to={'/category/all'}>Volver al principio</Link>
+            <Link className='contBuyButton' to={'/category/all'}>Volver al principio</Link>
           </Button>
         </div>
       ) : (
         <>
           {cartItems.map((item) => (
-            <div className='cartListData' key={`${item.product.id}-${item.quantity}`}>
-
+            <div className='cartListData' key={`${item.product.id}&&${item.product.name}`}>
+              
               <img className='imageCart' src={item.product.image} alt={item.product.name} />
               <p className='detailCart'>{item.product.name}</p>
               <p className='detailCart'>Price: ${item.product.price}</p>
               <p className='detailCart'> x {item.quantity}</p>
               <button onClick={() => removeFromCart(item.product.id)}><i className="fa-solid fa-xmark"></i></button>
               <button onClick={clearCart}><i className="fa-solid fa-trash"></i></button>
+
+              {console.log(cartItems)}
               
             </div>
           ))}
+  
 
           {< SendOrder />}
-
         </>
       )}
     </div>
   )
 }
 
-export default Cart
+export default Cart;
+
 
 
 

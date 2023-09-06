@@ -1,29 +1,25 @@
-
 import React, { useState } from 'react';
 import { Button, FormControl, FormLabel, Input, Box, useToast } from '@chakra-ui/react';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { Link } from 'react-router-dom';
 
-
 const CheckOut = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [confirmEmail, setConfirmEmail] = useState('')
-  const [address, setAddress] = useState('')
-  const [orderId, setOrderId] = useState(null)
-  const [isEmailConfirmed, setIsEmailConfirmed] = useState(false)
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [orderId, setOrderId] = useState(null);
+  const [isEmailConfirmed, setIsEmailConfirmed] = useState(false);
 
-  const { cartItems, clearCart } = useShoppingCart()
-
-  const toast = useToast()
-  const db = getFirestore()
+  const { cartItems, clearCart } = useShoppingCart();
+  const toast = useToast();
+  const db = getFirestore();
+  const ordersCollection = collection(db, 'orders');
 
   const handleEmailConfirmation = () => {
-    if (email === confirmEmail) {
-      setIsEmailConfirmed(true)
-    } else {
-      setIsEmailConfirmed(false)
+    setIsEmailConfirmed(email === confirmEmail);
+    if (!isEmailConfirmed) {
       toast({
         position: 'center-bottom',
         status: 'error',
@@ -34,51 +30,21 @@ const CheckOut = () => {
             ✖ Las direcciones de correo electrónico no coinciden
           </Box>
         ),
-      })
+      });
     }
-  }
+  };
 
   const handleCheckout = async (e) => {
-
-    e.preventDefault()
-
+    e.preventDefault();
     if (isEmailConfirmed && cartItems.length > 0) {
-      try { 
-
-        const orderItems = cartItems.map((item) => ({
-          productId: item.product.name,
-          quantity: item.quantity,
-        }))
-  
-        const order = {
-          name,
-          email,
-          address,
-          items: orderItems,
-        }
-  
-        const docRef = await addDoc(ordersCollection, order)
-        
-        setOrderId(docRef.id);
-        clearCart();
-
-        
-        
-      } catch (error) {
-        toast({
-          position: 'center-bottom',
-          status: 'error',
-          duration: 3000,
-          isClosable: true,
-          render: () => (
-            <Box color='gray.700' fontSize='md' fontWeight='bold' p={15} margin='0px' bg='rgb(250, 165, 9)'>
-              Error al enviar el formulario
-            </Box>
-          ),
-        })
-
-      }
-
+      const orderItems = cartItems.map((item) => ({
+        productId: item.product.id,
+        quantity: item.quantity,
+      }));
+      const order = { name, email, address, items: orderItems };
+      const docRef = await addDoc(ordersCollection, order);
+      setOrderId(docRef.id);
+      clearCart();
     } else if (cartItems.length === 0) {
       toast({
         position: 'right-bottom',
@@ -90,8 +56,7 @@ const CheckOut = () => {
             Debes agregar artículos al carrito para poder hacer la orden
           </Box>
         ),
-      })
-
+      });
     } else {
       toast({
         position: 'center-bottom',
@@ -103,14 +68,11 @@ const CheckOut = () => {
             Por favor verifica que las direcciones de correo electrónico coincidan
           </Box>
         ),
-      })
-
+      });
     }
-  }
+  };
 
-  const ordersCollection = collection(db, 'orders')
-
-  const isFormValid = name && email && confirmEmail && isEmailConfirmed && address && cartItems.length > 0
+  const isFormValid = name && email && confirmEmail && isEmailConfirmed && address && cartItems.length > 0;
 
   return (
     <div className='checkoutForm'>
@@ -140,15 +102,19 @@ const CheckOut = () => {
       </div>
 
       <Button marginTop='80px' fontFamily='"Raleway", sans-serif' bg='rgb(250, 165, 9)' fontSize='20px' color='gray.700' borderRadius='0' padding='1.5' onClick={handleCheckout} disabled={!isFormValid}>
-          <Link to='/confirmation'>
-          Enviar orden de compra
-          </Link>
+        <Link to='/confirmation'>Enviar orden de compra</Link>
       </Button>
 
+      {orderId && (
+        <Box color='gray.700' fontSize='md' fontWeight='bold' p={15} margin='0px' bg='rgb(250, 165, 9)'>
+          Order ID: {orderId}
+        </Box>
+      )}
     </div>
-  )
+  );
 }
 
-export default CheckOut
+export default CheckOut;
+
 
 
