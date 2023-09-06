@@ -19,7 +19,7 @@ const Cart = () => {
       ) : (
         <>
           {cartItems.map((item) => (
-            <div className='cartListData' key={`${item.product.id}&&${item.product.name}`}>
+            <div className='cartListData' key={`${item.product.id} - ${item.product.name}`}>
               
               <img className='imageCart' src={item.product.image} alt={item.product.name} />
               <p className='detailCart'>{item.product.name}</p>
@@ -28,8 +28,6 @@ const Cart = () => {
               <button onClick={() => removeFromCart(item.product.id)}><i className="fa-solid fa-xmark"></i></button>
               <button onClick={clearCart}><i className="fa-solid fa-trash"></i></button>
 
-              {console.log(cartItems)}
-              
             </div>
           ))}
   

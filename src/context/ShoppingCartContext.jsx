@@ -1,19 +1,21 @@
-import React, { createContext, useContext, useState } from 'react';
-export const ShoppingCartContext = createContext();
+import React, { createContext, useContext, useState } from 'react'
+export const ShoppingCartContext = createContext()
 
 export const useShoppingCart = () => {
-  return useContext(ShoppingCartContext);
+  return useContext(ShoppingCartContext)
 };
 
 export const CartContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([])
 
   const addToCart = (product, quantity) => {
-
+    
     setCartItems((prevCartItems) => {
-      const existingItemIndex = prevCartItems.findIndex((item) => item.product.id === product.id);
+      const existingItemIndex = prevCartItems.findIndex((item) => item.product.name === product.name);
 
-      if (existingItemIndex) {
+      {console.log(cartItems)}
+  
+      if (existingItemIndex !== -1) {
         const updatedCartItems = [...prevCartItems];
         updatedCartItems[existingItemIndex].quantity += quantity;
         return updatedCartItems;
@@ -21,23 +23,24 @@ export const CartContextProvider = ({ children }) => {
         return [...prevCartItems, { product, quantity }];
       }
     });
-
   };
+
+  
 
   const removeFromCart = (productId) => {
-    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.product.id !== productId));
-  };
+    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.product.id !== productId))
+  }
 
   const clearCart = () => {
-    setCartItems([]);
-  };
+    setCartItems([])
+  }
 
   return (
     <ShoppingCartContext.Provider value={{ cartItems, addToCart, clearCart, removeFromCart }}>
       {children}
     </ShoppingCartContext.Provider>
-  );
-};
+  )
+}
 
 
 
