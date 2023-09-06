@@ -14,7 +14,7 @@
 ### Desde el carrito puedes borrar los articulos o limpiar completamente el carrito. Al final verás el total de la compra y el botón para finalizar la compra. Esto te llevará al formulario para generar la orden, los datos que completen junto con la información de los articulos del carrito se suben a la base de datos para que luego desde nuestro lado podamos contactarte y coordinar el pago y la entrega de los productos.
 
 
-![GIFNeedo2](https://github.com/Gozzco/preEntrega2_Roger_Gonzalez/assets/118758175/5c9322d0-3a3b-40eb-9d8e-8a88fa404152)
 
+![Uploading Needo - Deco Home - Google Chrome 2023-09-06 03-17-32.gif…]()
 
 
